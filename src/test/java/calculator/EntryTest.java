@@ -24,9 +24,9 @@ class EntryTest {
    */
   @Test
   void testEntrySymbols() {
-    Entry entry = new Entry(Symbol.PLUS);
+    Entry entry = new Entry(Symbol.Symbols.PLUS);
     assertEquals(Type.Types.SYMBOL, entry.getType());
-    assertEquals(Symbol.PLUS, entry.getSymbol());
+    assertEquals(Symbol.Symbols.PLUS, entry.getSymbol());
   }
 
   /**
@@ -62,8 +62,8 @@ class EntryTest {
    */
   @Test
   void testGetSymbol() {
-    Entry entry = new Entry(Symbol.MINUS);
-    assertEquals(Symbol.MINUS, entry.getSymbol());
+    Entry entry = new Entry(Symbol.Symbols.MINUS);
+    assertEquals(Symbol.Symbols.MINUS, entry.getSymbol());
   }
 
   /**
@@ -82,41 +82,45 @@ class EntryTest {
   void testEqualsObject() {
     Entry entry1 = new Entry(42.0f);
     Entry entry2 = new Entry(42.0f);
-    Entry entry3 = new Entry(Symbol.PLUS);
+    Entry entry3 = new Entry(Symbol.Symbols.PLUS);
 
     assertEquals(entry1, entry2);
     assertNotEquals(entry1, entry3);
   }
-  void testBadTypeException() {
-    Entry entryNumber = new Entry(42.0f);
-    Entry entrySymbol = new Entry(Symbol.PLUS);
-    Entry entryString = new Entry("Test String");
+  /**
+   * Test the getString method for an Entry not of type STRING.
+   */
+  @Test
+  void testGetStringWithNonStringType() {
+      Entry entry = new Entry(42.0f); // Number type
+      RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
+          entry.getString();
+      });
+      assertEquals("bad type", thrown.getMessage());
+  }
 
-    assertThrows(BadTypeException.class, () -> {
-        entryNumber.getSymbol();
-    });
+  /**
+   * Test the getSymbol method for an Entry not of type SYMBOL.
+   */
+  @Test
+  void testGetSymbolWithNonSymbolType() {
+      Entry entry = new Entry("Test String"); // String type
+      RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
+          entry.getSymbol();
+      });
+      assertEquals("bad type", thrown.getMessage());
+  }
 
-    assertThrows(BadTypeException.class, () -> {
-        entryNumber.getString();
-    });
-
-    assertThrows(BadTypeException.class, () -> {
-        entrySymbol.getValue();
-    });
-
-    assertThrows(BadTypeException.class, () -> {
-        entrySymbol.getString();
-    });
-
-    assertThrows(BadTypeException.class, () -> {
-        entryString.getValue();
-    });
-
-    assertThrows(BadTypeException.class, () -> {
-        entryString.getSymbol();
-    });
+  /**
+   * Test the getValue method for an Entry not of type NUMBER.
+   */
+  @Test
+  void testGetValueWithNonNumberType() {
+      Entry entry = new Entry(Symbol.Symbols.PLUS); // Symbol type
+      RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
+          entry.getValue();
+      });
+      assertEquals("bad type", thrown.getMessage());
+  }
 }
-}
-}
-
 
