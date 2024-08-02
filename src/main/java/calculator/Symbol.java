@@ -1,69 +1,32 @@
 package calculator;
 
 /**
- * The Symbol class represents symbols that can be used in a calculator.
- * It defines an enum (Symbols) for various symbols.
+ * Class representing symbols used in calculations.
  */
 public class Symbol {
-  /**
-   * The Symbols enum defines the possible symbols that can be used in a calculator.
-   */
-  public enum Symbols {
-    /**
-     * Represents a left parenthesis symbol: "(".
-     */
-    LEFT_BRACKET("("),
 
     /**
-     * Represents a right parenthesis symbol: ")".
+     * Enum representing various symbols.
      */
-    RIGHT_BRACKET(")"),
+    public enum Symbols {
+        LEFT_BRACKET("("),
+        RIGHT_BRACKET(")"),
+        TIME("*"),
+        DIVIDE("/"),
+        PLUS("+"),
+        MINUS("-");
 
-    /**
-     * Represents a multiplication symbol: "*".
-     */
-    TIME("*"),
+        private final String symbol;
 
-    /**
-     * Represents a division symbol: "/".
-     */
-    DIVIDE("/"),
+        // Constructor
+        Symbols(String symbol) {
+            this.symbol = symbol;
+        }
 
-    /**
-     * Represents an addition symbol: "+".
-     */
-    PLUS("+"),
-
-    /**
-     * Represents a subtraction symbol: "-".
-     */
-    MINUS("-"),
-
-    /**
-     * Represents an INVALID symbol for an invalid or unrecognized input.
-     */
-    INVALID("INVALID");
-
-    private String symbol;
-
-    /**
-     * Constructs a Symbols enum value with the specified symbol string.
-     *
-     * @param symbol The symbol associated with the enum value.
-     */
-    Symbols(String symbol) {
-      this.symbol = symbol;
+        // Overriding toString method to return the expected symbol string
+        @Override
+        public String toString() {
+            return this.symbol;
+        }
     }
-
-    /**
-     * Returns a string representation of the symbol.
-     *
-     * @return The symbol string.
-     */
-    @Override
-    public String toString() {
-      return symbol;
-    }
-  }
 }
-

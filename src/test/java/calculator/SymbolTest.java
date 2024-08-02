@@ -12,6 +12,7 @@ class SymbolTest {
   /**
    * Test the values() method for the Symbol.Symbols enum.
    */
+  //Test1
   @Test
   void testEnumValues() {
     // Test that the enum contains the expected values
@@ -26,6 +27,7 @@ class SymbolTest {
   /**
    * Test the toString method for each enum value in the Symbol.Symbols enum.
    */
+  //Test2
   @Test
   void testEnumToString() {
     // Test the toString method for each enum value
