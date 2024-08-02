@@ -1,5 +1,7 @@
 package calculator;
 
+import calculator.Symbol.Symbols;
+
 /**
  * The Entry class represents an entry in a calculator that can be of various types:
  * a number, a symbol, or a string. It also provides methods to access and manipulate these entries.
@@ -21,16 +23,6 @@ public class Entry {
   }
 
   /**
-   * Constructs an Entry with a symbol.
-   *
-   * @param theSymbol The symbol for the Entry.
-   */
-  public Entry(Symbol.Symbols theSymbol) {
-    this.type = Type.Types.SYMBOL;
-    this.symbol = theSymbol;
-  }
-
-  /**
    * Constructs an Entry with a string value.
    *
    * @param value The string value for the Entry.
@@ -38,6 +30,11 @@ public class Entry {
   public Entry(String value) {
     this.type = Type.Types.STRING;
     this.stringValue = value;
+  }
+
+  public Entry(Symbol.Symbols value) {
+    this.type = Type.Types.SYMBOL;
+    this.symbol = value;
   }
 
   /**
@@ -134,6 +131,10 @@ public class Entry {
           case SYMBOL:
               result = 31 * result + symbol.hashCode();
               break;
+        case INVALID:
+          break;
+        default:
+          break;
       }
       return result;
   }
