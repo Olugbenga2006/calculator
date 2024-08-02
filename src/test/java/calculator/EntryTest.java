@@ -12,6 +12,8 @@ class EntryTest {
   /**
    * Test the constructor for creating an Entry with a float value.
    */
+  //Test 1
+  // uses a constructor to pass test
   @Test
   void testEntryFloat() {
     Entry entry = new Entry(42.0f);
@@ -22,6 +24,8 @@ class EntryTest {
   /**
    * Test the constructor for creating an Entry with a symbol.
    */
+  //Test 2
+  // uses a constructor to pass test
   @Test
   void testEntrySymbols() {
     Entry entry = new Entry(Symbol.Symbols.PLUS);
@@ -32,6 +36,8 @@ class EntryTest {
   /**
    * Test the constructor for creating an Entry with a string value.
    */
+  //Test 3
+  // uses a constructor to pass test
   @Test
   void testEntryString() {
     Entry entry = new Entry("Test String");
@@ -42,6 +48,8 @@ class EntryTest {
   /**
    * Test the getType method of the Entry class.
    */
+  //Test 4
+  // uses a getter function to pass test
   @Test
   void testGetType() {
     Entry entry = new Entry(42.0f);
@@ -51,6 +59,8 @@ class EntryTest {
   /**
    * Test the getString method of the Entry class.
    */
+  //Test 5
+  // uses a getter function to pass test
   @Test
   void testGetString() {
     Entry entry = new Entry("Test String");
@@ -60,6 +70,8 @@ class EntryTest {
   /**
    * Test the getSymbol method of the Entry class.
    */
+  //Test 6
+  // uses a getter function to pass test
   @Test
   void testGetSymbol() {
     Entry entry = new Entry(Symbol.Symbols.MINUS);
@@ -69,6 +81,8 @@ class EntryTest {
   /**
    * Test the getValue method of the Entry class.
    */
+  //Test 7
+  // uses a getter function to pass test
   @Test
   void testGetValue() {
     Entry entry = new Entry(3.14159f);
@@ -78,6 +92,8 @@ class EntryTest {
   /**
    * Test the equals method of the Entry class for comparing two Entry objects.
    */
+  //Test 8
+  // uses boolean function to pass test
   @Test
   void testEqualsObject() {
     Entry entry1 = new Entry(42.0f);
@@ -90,6 +106,7 @@ class EntryTest {
   /**
    * Test the getString method for an Entry not of type STRING.
    */
+  //Test 9
   @Test
   void testGetStringWithNonStringType() {
       Entry entry = new Entry(42.0f); // Number type
@@ -102,6 +119,7 @@ class EntryTest {
   /**
    * Test the getSymbol method for an Entry not of type SYMBOL.
    */
+  //Test 10
   @Test
   void testGetSymbolWithNonSymbolType() {
       Entry entry = new Entry("Test String"); // String type
@@ -114,6 +132,7 @@ class EntryTest {
   /**
    * Test the getValue method for an Entry not of type NUMBER.
    */
+  //Test 11
   @Test
   void testGetValueWithNonNumberType() {
       Entry entry = new Entry(Symbol.Symbols.PLUS); // Symbol type
@@ -121,6 +140,39 @@ class EntryTest {
           entry.getValue();
       });
       assertEquals("bad type", thrown.getMessage());
+  }
+  /**
+   * Test ensures that equals method returns false when comparing two types
+   */
+  //Test 12
+  //uses boolean function
+  @Test
+  void testEqualsWithDifferentTypes() {
+      Entry entry1 = new Entry(42.0f);
+      Entry entry2 = new Entry("42.0");
+      assertNotEquals(entry1, entry2);
+  }
+  /**
+   * Test the hashcode to see if it keeps its consistency
+   */
+  //Test 13
+  // uses hashcode function
+  @Test
+  void testHashCodeConsistency() {
+      Entry entry1 = new Entry(42.0f);
+      Entry entry2 = new Entry(42.0f);
+      assertEquals(entry1.hashCode(), entry2.hashCode());
+  }
+  /**
+   * Test the hashcode to see if it stores different entries with different codes
+   */
+  //Test 14
+  // uses hashcode function
+  @Test
+  void testHashCodeWithDifferentValues() {
+      Entry entry1 = new Entry(42.0f);
+      Entry entry2 = new Entry(43.0f);
+      assertNotEquals(entry1.hashCode(), entry2.hashCode());
   }
 }
 
