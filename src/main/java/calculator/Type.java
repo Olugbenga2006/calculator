@@ -1,53 +1,38 @@
 package calculator;
 
 /**
- * The Type class represents the types that can be associated with entries in a calculator.
- * These types include STRING, NUMBER, SYMBOL, and INVALID.
+ * Class representing different types for the calculator.
  */
 public class Type {
-  /**
-   * The Types enum defines the possible types that an entry can have in a calculator.
-   */
-  public enum Types {
-    /**
-     * Represents a STRING type for a calculator entry.
-     */
-    STRING("String"),
 
     /**
-     * Represents a NUMBER type for a calculator entry.
+     * Enum representing various types.
      */
-    NUMBER("Number"),
+    public enum Types {
+        STRING("String"),
+        NUMBER("Number"),
+        SYMBOL("Symbol"),
+        INVALID("Invalid");
+        /**
+         * Constructs a Types enum value with the specified type name.
+         *
+         * @param typeName The name associated with the type.
+         */
+        private final String typeName;
 
-    /**
-     * Represents a SYMBOL type for a calculator entry.
-     */
-    SYMBOL("Symbol"),
-
-    /**
-     * Represents an INVALID type for a calculator entry.
-     */
-    INVALID("Invalid");
-
-    private String typeName;
-
-    /**
-     * Constructs a Types enum value with the specified type name.
-     *
-     * @param typeName The name associated with the type.
-     */
-    Types(String typeName) {
-      this.typeName = typeName;
+        // Constructor
+        Types(String typeName) {
+            this.typeName = typeName;
+        }
+        /**
+         * Returns a string representation of the type.
+         *
+         * @return The type name as a string.
+         */
+        // Overriding toString method to return the expected string
+        @Override
+        public String toString() {
+            return this.typeName;
+        }
     }
-
-    /**
-     * Returns a string representation of the type.
-     *
-     * @return The type name as a string.
-     */
-    @Override
-    public String toString() {
-      return typeName;
-    }
-  }
 }
