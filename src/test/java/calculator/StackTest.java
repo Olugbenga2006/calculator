@@ -140,7 +140,7 @@ class StackTest {
       assertEquals(numberEntry, stack.pop());
   }
   /**
-   * Testensures that the stack can handle a large number of entries.
+   * Test ensures that the stack can handle a large number of entries.
    */
   //Test9
   @Test

@@ -62,7 +62,7 @@ class TypeTest {
       assertEquals("INVALID", Type.Types.INVALID.name());
   }
   /**
-   * Test ensures equals() method correvtly compares enum constants
+   * Test ensures equals() method correctly compares enum constants
    */
   //Test5
   @Test

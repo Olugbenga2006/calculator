@@ -92,7 +92,7 @@ public class Entry {
    * Compares this Entry with another object for equality.
    *
    * @param obj The object to compare with this Entry.
-   * @return {@code true} if the objects are equal, {@code false} otherwise.
+   * @return true if the objects are equal, false otherwise.
    */
   @Override
   public boolean equals(Object obj) {
@@ -118,6 +118,11 @@ public class Entry {
 
     return true;
   }
+  /**
+   * Hash code for Entries.
+   * 
+   * @return a hash code value for this Entry.
+   */
   @Override
   public int hashCode() {
       int result = type.hashCode();

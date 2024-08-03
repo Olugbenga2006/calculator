@@ -153,10 +153,10 @@ class EntryTest {
       assertNotEquals(entry1, entry2);
   }
   /**
-   * Test the hashcode to see if it keeps its consistency
+   * Test the hash code to see if it keeps its consistency
    */
   //Test 13
-  // uses hashcode function
+  // uses hash code function
   @Test
   void testHashCodeConsistency() {
       Entry entry1 = new Entry(42.0f);
@@ -164,10 +164,10 @@ class EntryTest {
       assertEquals(entry1.hashCode(), entry2.hashCode());
   }
   /**
-   * Test the hashcode to see if it stores different entries with different codes
+   * Test the hash code to see if it stores different entries with different codes
    */
   //Test 14
-  // uses hashcode function
+  // uses hash code function
   @Test
   void testHashCodeWithDifferentValues() {
       Entry entry1 = new Entry(42.0f);
