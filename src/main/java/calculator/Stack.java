@@ -14,7 +14,7 @@ public class Stack {
    */
   public Stack() {
     stack = new ArrayList<>();
-    }
+  }
 
   /**
    * Pushes an Entry onto the top of the stack.
@@ -23,7 +23,7 @@ public class Stack {
    */
   public void push(Entry entry) {
     stack.add(entry);
-    }
+  }
 
   /**
    * Removes and returns the Entry at the top of the stack.
@@ -34,9 +34,9 @@ public class Stack {
   public Entry pop() {
     if (stack.isEmpty()) {
       throw new RuntimeException("Stack is empty");
-      }
-    return stack.remove(stack.size() - 1);
     }
+    return stack.remove(stack.size() - 1);
+  }
 
   /**
    * Returns the Entry at the top of the stack without removing it.
@@ -47,9 +47,9 @@ public class Stack {
   public Entry top() {
     if (stack.isEmpty()) {
       throw new RuntimeException("Stack is empty");
-      }
-    return stack.get(stack.size() - 1);
     }
+    return stack.get(stack.size() - 1);
+  }
   /**
    * Returns the number of entries in the stack.
    *
@@ -57,7 +57,7 @@ public class Stack {
    */
   public int size() {
     return stack.size();
-    }
+  }
 
   /**
    * Checks if the stack is empty.
@@ -66,5 +66,5 @@ public class Stack {
    */
   public boolean isEmpty() {
     return stack.isEmpty();
-    }
   }
+}

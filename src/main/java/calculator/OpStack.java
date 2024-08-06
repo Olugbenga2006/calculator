@@ -11,7 +11,7 @@ public class OpStack {
    */
   public OpStack() {
     this.stack = new Stack();
-    }
+  }
 
   /**
    * Pushes a Symbol onto the stack.
@@ -20,7 +20,7 @@ public class OpStack {
    */
   public void push(Symbol.Symbols symbol) {
     stack.push(new Entry(symbol));
-    }
+  }
 
   /**
    * Removes and returns the Symbol at the top of the stack.
@@ -30,10 +30,10 @@ public class OpStack {
    */
   public Symbol.Symbols pop() throws RuntimeException {
     if (stack.isEmpty()) {
-        throw new RuntimeException("Stack is empty");
-        }
-    return stack.pop().getSymbol();
+      throw new RuntimeException("Stack is empty");
     }
+    return stack.pop().getSymbol();
+  }
 
   /**
    * Returns the Symbol at the top of the stack without removing it.
@@ -43,10 +43,10 @@ public class OpStack {
    */
   public Symbol.Symbols top() throws RuntimeException {
     if (stack.isEmpty()) {
-        throw new RuntimeException("Stack is empty");
-        }
-    return stack.top().getSymbol();
+      throw new RuntimeException("Stack is empty");
     }
+    return stack.top().getSymbol();
+  }
 
   /**
    * Returns the number of entries in the stack.
@@ -55,5 +55,5 @@ public class OpStack {
    */
   public int size() {
     return stack.size();
-    }
+  }
 }

@@ -63,7 +63,7 @@ class NumstackTest {
     numStack.push(2.0f);
     assertFalse(numStack.size() == 0);
   }
-  
+
   /**
    * Test the pop method for an empty stack.
    */
@@ -72,7 +72,7 @@ class NumstackTest {
   void testPopEmptyStack() {
     RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
       numStack.pop();
-      });
+    });
     assertEquals("Stack is empty", thrown.getMessage());
   }
 
@@ -84,7 +84,7 @@ class NumstackTest {
   void testTopEmptyStack() {
     RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
       numStack.top();
-      });
+    });
     assertEquals("Stack is empty", thrown.getMessage());
   }
 }

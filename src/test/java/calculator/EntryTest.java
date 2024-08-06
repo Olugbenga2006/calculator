@@ -109,11 +109,11 @@ class EntryTest {
   //Test 9
   @Test
   void testGetStringWithNonStringType() {
-      Entry entry = new Entry(42.0f); // Number type
-      RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
-          entry.getString();
-      });
-      assertEquals("bad type", thrown.getMessage());
+    Entry entry = new Entry(42.0f); // Number type
+    RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
+      entry.getString();
+    });
+    assertEquals("bad type", thrown.getMessage());
   }
 
   /**
@@ -122,11 +122,11 @@ class EntryTest {
   //Test 10
   @Test
   void testGetSymbolWithNonSymbolType() {
-      Entry entry = new Entry("Test String"); // String type
-      RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
-          entry.getSymbol();
-      });
-      assertEquals("bad type", thrown.getMessage());
+    Entry entry = new Entry("Test String"); // String type
+    RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
+      entry.getSymbol();
+    });
+    assertEquals("bad type", thrown.getMessage());
   }
 
   /**
@@ -135,11 +135,11 @@ class EntryTest {
   //Test 11
   @Test
   void testGetValueWithNonNumberType() {
-      Entry entry = new Entry(Symbol.Symbols.PLUS); // Symbol type
-      RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
-          entry.getValue();
-      });
-      assertEquals("bad type", thrown.getMessage());
+    Entry entry = new Entry(Symbol.Symbols.PLUS); // Symbol type
+    RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
+      entry.getValue();
+    });
+    assertEquals("bad type", thrown.getMessage());
   }
   /**
    * Test ensures that equals method returns false when comparing two types
@@ -148,9 +148,9 @@ class EntryTest {
   //uses boolean function
   @Test
   void testEqualsWithDifferentTypes() {
-      Entry entry1 = new Entry(42.0f);
-      Entry entry2 = new Entry("42.0");
-      assertNotEquals(entry1, entry2);
+    Entry entry1 = new Entry(42.0f);
+    Entry entry2 = new Entry("42.0");
+    assertNotEquals(entry1, entry2);
   }
   /**
    * Test the hash code to see if it keeps its consistency
@@ -159,9 +159,9 @@ class EntryTest {
   // uses hash code function
   @Test
   void testHashCodeConsistency() {
-      Entry entry1 = new Entry(42.0f);
-      Entry entry2 = new Entry(42.0f);
-      assertEquals(entry1.hashCode(), entry2.hashCode());
+    Entry entry1 = new Entry(42.0f);
+    Entry entry2 = new Entry(42.0f);
+    assertEquals(entry1.hashCode(), entry2.hashCode());
   }
   /**
    * Test the hash code to see if it stores different entries with different codes
@@ -170,9 +170,9 @@ class EntryTest {
   // uses hash code function
   @Test
   void testHashCodeWithDifferentValues() {
-      Entry entry1 = new Entry(42.0f);
-      Entry entry2 = new Entry(43.0f);
-      assertNotEquals(entry1.hashCode(), entry2.hashCode());
+    Entry entry1 = new Entry(42.0f);
+    Entry entry2 = new Entry(43.0f);
+    assertNotEquals(entry1.hashCode(), entry2.hashCode());
   }
 }
 

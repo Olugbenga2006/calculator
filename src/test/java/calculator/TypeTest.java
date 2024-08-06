@@ -56,10 +56,10 @@ class TypeTest {
   //Test4
   @Test
   void testEnumName() {
-      assertEquals("STRING", Type.Types.STRING.name());
-      assertEquals("NUMBER", Type.Types.NUMBER.name());
-      assertEquals("SYMBOL", Type.Types.SYMBOL.name());
-      assertEquals("INVALID", Type.Types.INVALID.name());
+    assertEquals("STRING", Type.Types.STRING.name());
+    assertEquals("NUMBER", Type.Types.NUMBER.name());
+    assertEquals("SYMBOL", Type.Types.SYMBOL.name());
+    assertEquals("INVALID", Type.Types.INVALID.name());
   }
   /**
    * Test ensures equals() method correctly compares enum constants
@@ -67,8 +67,8 @@ class TypeTest {
   //Test5
   @Test
   void testEnumEquals() {
-      assertTrue(Type.Types.STRING.equals(Type.Types.STRING));
-      assertFalse(Type.Types.STRING.equals(Type.Types.NUMBER));
+    assertTrue(Type.Types.STRING.equals(Type.Types.STRING));
+    assertFalse(Type.Types.STRING.equals(Type.Types.NUMBER));
   }
 
 

@@ -11,7 +11,7 @@ public class NumStack {
    */
   public NumStack() {
     this.stack = new Stack();
-    }
+  }
 
   /**
    * Pushes a float value onto the stack.
@@ -20,7 +20,7 @@ public class NumStack {
    */
   public void push(float value) {
     stack.push(new Entry(value));
-    }
+  }
 
   /**
    * Removes and returns the float value at the top of the stack.
@@ -31,9 +31,9 @@ public class NumStack {
   public float pop() throws RuntimeException {
     if (stack.isEmpty()) {
       throw new RuntimeException("Stack is empty");
-      }
-    return stack.pop().getValue();
     }
+    return stack.pop().getValue();
+  }
 
   /**
    * Returns the float value at the top of the stack without removing it.
@@ -44,9 +44,9 @@ public class NumStack {
   public float top() throws RuntimeException {
     if (stack.isEmpty()) {
       throw new RuntimeException("Stack is empty");
-      }
-    return stack.top().getValue();
     }
+    return stack.top().getValue();
+  }
 
   /**
    * Returns the number of entries in the stack.
@@ -55,5 +55,5 @@ public class NumStack {
    */
   public int size() {
     return stack.size();
-    }
+  }
 }
