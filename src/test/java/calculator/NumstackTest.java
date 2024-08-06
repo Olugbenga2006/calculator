@@ -8,7 +8,8 @@ import org.junit.jupiter.api.Test;
  * JUnit test class for the NumStack class. This class contains test cases to verify
  * the functionality of the NumStack class's methods.
  */
-class NumStackTest {
+//ensure class name matches test file name even capitalisation
+class NumstackTest {
   private NumStack numStack;
   /**
    * Set up a new NumStack instance before each test case.
