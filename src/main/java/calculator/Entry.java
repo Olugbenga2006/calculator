@@ -125,22 +125,22 @@ public class Entry {
    */
   @Override
   public int hashCode() {
-      int result = type.hashCode();
-      switch (type) {
-          case STRING:
-              result = 31 * result + stringValue.hashCode();
-              break;
-          case NUMBER:
-              result = 31 * result + Float.hashCode(floatValue);
-              break;
-          case SYMBOL:
-              result = 31 * result + symbol.hashCode();
-              break;
-        case INVALID:
-          break;
-        default:
-          break;
-      }
-      return result;
+    int result = type.hashCode();
+    switch (type) {
+      case STRING:
+        result = 31 * result + stringValue.hashCode();
+        break;
+      case NUMBER:
+        result = 31 * result + Float.hashCode(floatValue);
+        break;
+      case SYMBOL:
+        result = 31 * result + symbol.hashCode();
+        break;
+      case INVALID:
+        break;
+      default:
+        break;
+    }
+    return result;
   }
 }
