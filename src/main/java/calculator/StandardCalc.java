@@ -26,7 +26,6 @@ public class StandardCalc {
    * @param expr the string containing the calculation to be performed
    * @throws RuntimeException if stack is empty
    */
-
   public float evaluate(String expr)
       throws RuntimeException {
     Float num1;
@@ -35,7 +34,6 @@ public class StandardCalc {
     Scanner scanner = new Scanner(expr);
 
     while (scanner.hasNext()) {
-      // depending on the what the scanner reads next, it is added to the correct stack
       if (scanner.hasNextFloat()) {
         numStack.push(scanner.nextFloat());
       } else if (scanner.hasNext("-")) {
@@ -43,9 +41,23 @@ public class StandardCalc {
         values.push(Symbol.MINUS);
       } else if (scanner.hasNext("/")) {
         scanner.next("/");
-        values.push(Symbol.DIVIDE);}
-    
+        values.push(Symbol.DIVIDE);
+      } else if (scanner.hasNext("\\+")) {
+        scanner.next("\\+");
+        values.push(Symbol.PLUS);
+      } else if (scanner.hasNext("\\*")) {
+        scanner.next("\\*");
+        values.push(Symbol.TIME);
+      }
     }
-    
+
+    num2 = numStack.pop();
+    num1 = numStack.pop();
+    Symbol operator = values.pop();
+    String calculation = num1.toString() + " " + num2.toString() + " " + operator;
+    Float result = rpCalc.evaluate(calculation);
+
+    scanner.close();
+    return result;
   }
 }

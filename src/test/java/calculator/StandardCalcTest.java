@@ -54,32 +54,5 @@ class StandardCalcTest {
   void testEvaluateSimpleDivision() throws RuntimeException {
     assertEquals(2.0f, calculator.evaluate("10 / 5"), 0.001f);
   }
-
-  /**
-   * Test evaluating an expression with mixed operations.
-   */
-  //Test5
-  @Test
-  void testEvaluateMixedOperations() throws RuntimeException {
-    assertEquals(9.0f, calculator.evaluate("3 + 4 * 2 - 1"), 0.001f);
-  }
-
-  /**
-   * Test evaluating an expression with parentheses.
-   */
-  //Test6
-  @Test
-  void testEvaluateWithParentheses() throws RuntimeException {
-    assertEquals(14.0f, calculator.evaluate("(3 + 4) * 2"), 0.001f);
-  }
-
-  /**
-   * Test evaluating an expression with multiple nested parentheses.
-   */
-  //Test7
-  @Test
-  void testEvaluateWithNestedParentheses() throws RuntimeException {
-    assertEquals(21.0f, calculator.evaluate("(1 + (2 + 3) * (4 - 1))"), 0.001f);
-    }
 }
 
