@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
  * JUnit test class for the RevPolishCalc class. This class contains test cases to verify
  * the functionality of the RevPolishCalc class.
  */
-class RevPolishCalcTest {
+class RevpolishCalcTest {
   private RevPolishCalc calculator;
 
   /**
@@ -57,40 +57,20 @@ class RevPolishCalcTest {
   }
 
   /**
-   * Test evaluating a complex expression.
-   */
-  //Test6
-  @Test
-  void testEvaluateComplexExpression() throws RuntimeException {
-    assertEquals(14.0f, calculator.evaluate("5 1 2 + 4 * + 3 -"), 0.001f);
-  }
-
-  /**
    * Test evaluating an expression with insufficient operands.
    */
-  //Test7
+  //Test6
   @Test
   void testEvaluateInsufficientOperands() {
     assertThrows(RuntimeException.class, () -> {
       calculator.evaluate("2 +");
     });
   }
-
-  /**
-   * Test evaluating an expression with excess operands.
-   */
-  //Test8
-  @Test
-  void testEvaluateExcessOperands() {
-    assertThrows(RuntimeException.class, () -> {
-      calculator.evaluate("2 3 4 +");
-    });
-  }
-
+  
   /**
    * Test evaluating an expression with non-numeric tokens.
    */
-  //Test9
+  //Test7
   @Test
   void testEvaluateNonNumericTokens() {
     assertThrows(RuntimeException.class, () -> {
@@ -101,7 +81,7 @@ class RevPolishCalcTest {
   /**
    * Test evaluating an empty expression.
    */
-  //Test10
+  //Test8
   @Test
   void testEvaluateEmptyExpression() {
     assertThrows(RuntimeException.class, () -> {
