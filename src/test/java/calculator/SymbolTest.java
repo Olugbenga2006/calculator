@@ -16,12 +16,12 @@ class SymbolTest {
   @Test
   void testEnumValues() {
     // Test that the enum contains the expected values
-    assertTrue(Symbol.Symbols.valueOf("LEFT_BRACKET") instanceof Symbol.Symbols);
-    assertTrue(Symbol.Symbols.valueOf("RIGHT_BRACKET") instanceof Symbol.Symbols);
-    assertTrue(Symbol.Symbols.valueOf("TIME") instanceof Symbol.Symbols);
-    assertTrue(Symbol.Symbols.valueOf("DIVIDE") instanceof Symbol.Symbols);
-    assertTrue(Symbol.Symbols.valueOf("PLUS") instanceof Symbol.Symbols);
-    assertTrue(Symbol.Symbols.valueOf("MINUS") instanceof Symbol.Symbols);
+    assertTrue(Symbol.valueOf("LEFT_BRACKET") instanceof Symbol);
+    assertTrue(Symbol.valueOf("RIGHT_BRACKET") instanceof Symbol);
+    assertTrue(Symbol.valueOf("TIME") instanceof Symbol);
+    assertTrue(Symbol.valueOf("DIVIDE") instanceof Symbol);
+    assertTrue(Symbol.valueOf("PLUS") instanceof Symbol);
+    assertTrue(Symbol.valueOf("MINUS") instanceof Symbol);
   }
 
   /**
@@ -31,11 +31,11 @@ class SymbolTest {
   @Test
   void testEnumToString() {
     // Test the toString method for each enum value
-    assertEquals("(", Symbol.Symbols.LEFT_BRACKET.toString());
-    assertEquals(")", Symbol.Symbols.RIGHT_BRACKET.toString());
-    assertEquals("*", Symbol.Symbols.TIME.toString());
-    assertEquals("/", Symbol.Symbols.DIVIDE.toString());
-    assertEquals("+", Symbol.Symbols.PLUS.toString());
-    assertEquals("-", Symbol.Symbols.MINUS.toString());
+    assertEquals("(", Symbol.LEFT_BRACKET.toString());
+    assertEquals(")", Symbol.RIGHT_BRACKET.toString());
+    assertEquals("*", Symbol.TIME.toString());
+    assertEquals("/", Symbol.DIVIDE.toString());
+    assertEquals("+", Symbol.PLUS.toString());
+    assertEquals("-", Symbol.MINUS.toString());
   }
 }

@@ -28,9 +28,9 @@ class EntryTest {
   // uses a constructor to pass test
   @Test
   void testEntrySymbols() {
-    Entry entry = new Entry(Symbol.Symbols.PLUS);
+    Entry entry = new Entry(Symbol.PLUS);
     assertEquals(Type.Types.SYMBOL, entry.getType());
-    assertEquals(Symbol.Symbols.PLUS, entry.getSymbol());
+    assertEquals(Symbol.PLUS, entry.getSymbol());
   }
 
   /**
@@ -74,8 +74,8 @@ class EntryTest {
   // uses a getter function to pass test
   @Test
   void testGetSymbol() {
-    Entry entry = new Entry(Symbol.Symbols.MINUS);
-    assertEquals(Symbol.Symbols.MINUS, entry.getSymbol());
+    Entry entry = new Entry(Symbol.MINUS);
+    assertEquals(Symbol.MINUS, entry.getSymbol());
   }
 
   /**
@@ -98,7 +98,7 @@ class EntryTest {
   void testEqualsObject() {
     Entry entry1 = new Entry(42.0f);
     Entry entry2 = new Entry(42.0f);
-    Entry entry3 = new Entry(Symbol.Symbols.PLUS);
+    Entry entry3 = new Entry(Symbol.PLUS);
 
     assertEquals(entry1, entry2);
     assertNotEquals(entry1, entry3);
@@ -135,7 +135,7 @@ class EntryTest {
   //Test 11
   @Test
   void testGetValueWithNonNumberType() {
-    Entry entry = new Entry(Symbol.Symbols.PLUS); // Symbol type
+    Entry entry = new Entry(Symbol.PLUS); // Symbol type
     RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
       entry.getValue();
     });

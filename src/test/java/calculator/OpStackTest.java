@@ -25,8 +25,8 @@ class OpStackTest {
   //Test1
   @Test
   void testPushAndTop() {
-    opStack.push(Symbol.Symbols.PLUS);
-    assertEquals(Symbol.Symbols.PLUS, opStack.top());
+    opStack.push(Symbol.PLUS);
+    assertEquals(Symbol.PLUS, opStack.top());
     }
 
   /**
@@ -35,8 +35,8 @@ class OpStackTest {
   //Test2
   @Test
   void testPushAndPop() {
-    opStack.push(Symbol.Symbols.MINUS);
-    assertEquals(Symbol.Symbols.MINUS, opStack.pop());
+    opStack.push(Symbol.MINUS);
+    assertEquals(Symbol.MINUS, opStack.pop());
     assertEquals(0, opStack.size());
     }
 
@@ -46,8 +46,8 @@ class OpStackTest {
   //Test3
   @Test
   void testSize() {
-    opStack.push(Symbol.Symbols.TIME);
-    opStack.push(Symbol.Symbols.DIVIDE);
+    opStack.push(Symbol.TIME);
+    opStack.push(Symbol.DIVIDE);
     assertEquals(2, opStack.size());
     opStack.pop();
     assertEquals(1, opStack.size());
@@ -60,7 +60,7 @@ class OpStackTest {
   @Test
   void testIsEmpty() {
     assertEquals(0, opStack.size());
-    opStack.push(Symbol.Symbols.LEFT_BRACKET);
+    opStack.push(Symbol.LEFT_BRACKET);
     assertEquals(1, opStack.size());
     }
 
@@ -94,12 +94,12 @@ class OpStackTest {
   //Test7
   @Test
   void testPushMultipleAndPop() {
-    opStack.push(Symbol.Symbols.PLUS);
-    opStack.push(Symbol.Symbols.MINUS);
-    opStack.push(Symbol.Symbols.DIVIDE);
-    assertEquals(Symbol.Symbols.DIVIDE, opStack.pop());
-    assertEquals(Symbol.Symbols.MINUS, opStack.pop());
-    assertEquals(Symbol.Symbols.PLUS, opStack.pop());
+    opStack.push(Symbol.PLUS);
+    opStack.push(Symbol.MINUS);
+    opStack.push(Symbol.DIVIDE);
+    assertEquals(Symbol.DIVIDE, opStack.pop());
+    assertEquals(Symbol.MINUS, opStack.pop());
+    assertEquals(Symbol.PLUS, opStack.pop());
     }
 
   /**
@@ -108,12 +108,12 @@ class OpStackTest {
   //Test8
   @Test
   void testInterleavedPushAndPop() {
-    opStack.push(Symbol.Symbols.PLUS);
-    assertEquals(Symbol.Symbols.PLUS, opStack.pop());
-    opStack.push(Symbol.Symbols.MINUS);
-    opStack.push(Symbol.Symbols.TIME);
-    assertEquals(Symbol.Symbols.TIME, opStack.pop());
-    assertEquals(Symbol.Symbols.MINUS, opStack.pop());
+    opStack.push(Symbol.PLUS);
+    assertEquals(Symbol.PLUS, opStack.pop());
+    opStack.push(Symbol.MINUS);
+    opStack.push(Symbol.TIME);
+    assertEquals(Symbol.TIME, opStack.pop());
+    assertEquals(Symbol.MINUS, opStack.pop());
     }
 
   /**
@@ -122,13 +122,13 @@ class OpStackTest {
   //Test9
   @Test
   void testPushMultipleAndCheckSize() {
-    opStack.push(Symbol.Symbols.PLUS);
+    opStack.push(Symbol.PLUS);
     assertEquals(1, opStack.size());
 
-    opStack.push(Symbol.Symbols.MINUS);
+    opStack.push(Symbol.MINUS);
     assertEquals(2, opStack.size());
 
-    opStack.push(Symbol.Symbols.TIME);
+    opStack.push(Symbol.TIME);
     assertEquals(3, opStack.size());
 
     opStack.pop();
@@ -148,13 +148,13 @@ class OpStackTest {
   @Test
   void testPushPopLargeNumberOfElements() {
     for (int i = 0; i < 1000; i++) {
-        opStack.push(Symbol.Symbols.PLUS);
+        opStack.push(Symbol.PLUS);
         }
 
     assertEquals(1000, opStack.size());
 
     for (int i = 0; i < 1000; i++) {
-        assertEquals(Symbol.Symbols.PLUS, opStack.pop());
+        assertEquals(Symbol.PLUS, opStack.pop());
         }
 
     assertEquals(0, opStack.size());

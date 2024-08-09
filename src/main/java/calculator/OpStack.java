@@ -18,7 +18,7 @@ public class OpStack {
    *
    * @param symbol The Symbol to be pushed onto the stack.
    */
-  public void push(Symbol.Symbols symbol) {
+  public void push(Symbol symbol) {
     stack.push(new Entry(symbol));
   }
 
@@ -28,7 +28,7 @@ public class OpStack {
    * @return The Symbol at the top of the stack.
    * @throws EmptyStackException if the stack is empty.
    */
-  public Symbol.Symbols pop() throws RuntimeException {
+  public Symbol pop() throws RuntimeException {
     if (stack.isEmpty()) {
       throw new RuntimeException("Stack is empty");
     }
@@ -41,7 +41,7 @@ public class OpStack {
    * @return The Symbol at the top of the stack.
    * @throws RuntimeException if the stack is empty.
    */
-  public Symbol.Symbols top() throws RuntimeException {
+  public Symbol top() throws RuntimeException {
     if (stack.isEmpty()) {
       throw new RuntimeException("Stack is empty");
     }

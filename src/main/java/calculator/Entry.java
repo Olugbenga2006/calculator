@@ -1,6 +1,6 @@
 package calculator;
 
-import calculator.Symbol.Symbols;
+import calculator.Symbol;
 
 /**
  * The Entry class represents an entry in a calculator that can be of various types:
@@ -10,7 +10,7 @@ public class Entry {
   private Type.Types type;
   private String stringValue;
   private float floatValue;
-  private Symbol.Symbols symbol;
+  private Symbol symbol;
 
   /**
    * Constructs an Entry with a float value.
@@ -32,7 +32,7 @@ public class Entry {
     this.stringValue = value;
   }
 
-  public Entry(Symbol.Symbols value) {
+  public Entry(Symbol value) {
     this.type = Type.Types.SYMBOL;
     this.symbol = value;
   }
@@ -66,7 +66,7 @@ public class Entry {
    * @return The symbol of the Entry.
    * @throws RuntimeException if the Entry is not of type SYMBOL.
    */
-  public Symbol.Symbols getSymbol() {
+  public Symbol getSymbol() {
     if (type == Type.Types.SYMBOL) {
       return symbol;
     } else {
@@ -128,13 +128,13 @@ public class Entry {
     int result = type.hashCode();
     switch (type) {
       case STRING:
-        result = 31 * result + stringValue.hashCode();
+        result = 32 * result + stringValue.hashCode();
         break;
       case NUMBER:
-        result = 31 * result + Float.hashCode(floatValue);
+        result = 32 * result + Float.hashCode(floatValue);
         break;
       case SYMBOL:
-        result = 31 * result + symbol.hashCode();
+        result = 32 * result + symbol.hashCode();
         break;
       case INVALID:
         break;

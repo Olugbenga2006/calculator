@@ -129,7 +129,7 @@ class StackTest {
   void testPushDifferentTypes() {
       Entry numberEntry = new Entry(1.0f);
       Entry stringEntry = new Entry("Test");
-      Entry symbolEntry = new Entry(Symbol.Symbols.PLUS);
+      Entry symbolEntry = new Entry(Symbol.PLUS);
 
       stack.push(numberEntry);
       stack.push(stringEntry);

@@ -1,32 +1,27 @@
 package calculator;
 
 /**
- * Class representing symbols used in calculations.
+ * Enum representing symbols used in calculations.
  */
-public class Symbol {
+public enum Symbol {
+  LEFT_BRACKET("("),
+  RIGHT_BRACKET(")"),
+  TIME("*"),
+  DIVIDE("/"),
+  PLUS("+"),
+  MINUS("-");
 
-    /**
-     * Enum representing various symbols.
-     */
-    public enum Symbols {
-        LEFT_BRACKET("("),
-        RIGHT_BRACKET(")"),
-        TIME("*"),
-        DIVIDE("/"),
-        PLUS("+"),
-        MINUS("-");
+  private String symbol;
 
-        private final String symbol;
+  // Constructor
+  private Symbol(String symbol) {
+    this.symbol = symbol;
+  }
 
-        // Constructor
-        Symbols(String symbol) {
-            this.symbol = symbol;
-        }
-
-        // Overriding toString method to return the expected symbol string
-        @Override
-        public String toString() {
-            return this.symbol;
-        }
-    }
+  // Overriding toString method to return the expected symbol string
+  @Override
+  public String toString() {
+    return this.symbol;
+  }
 }
+
