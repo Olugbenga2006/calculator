@@ -2,6 +2,7 @@ package calculator;
 
 /**
  * The OpStack class wraps around a Stack to specifically handle Symbol values.
+ * @author Fawaz 
  */
 public class OpStack {
   private Stack stack;

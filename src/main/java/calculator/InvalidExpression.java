@@ -1,6 +1,7 @@
 package calculator;
 /**
  * Exception class used to display an error message if an expression was passed to a method that could not be evaluated.
+ * @author Fawaz 
  */
 
 public class InvalidExpression extends Exception {

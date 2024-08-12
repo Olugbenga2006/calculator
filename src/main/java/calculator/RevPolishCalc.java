@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * This class performs the calculations on the calculator application.
- * 
+ * @author Fawaz 
  */
 public class RevPolishCalc {
   private NumStack numStack;

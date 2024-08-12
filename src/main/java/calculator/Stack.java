@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * The Stack class represents a stack data structure for storing Entry objects.
+ * @author Fawaz 
  */
 public class Stack {
   private List<Entry> stack;

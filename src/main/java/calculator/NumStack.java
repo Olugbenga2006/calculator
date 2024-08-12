@@ -2,6 +2,7 @@ package calculator;
 
 /**
  * The NumStack class wraps around a Stack to specifically handle float values.
+ * @author Fawaz 
  */
 public class NumStack {
   private Stack stack;

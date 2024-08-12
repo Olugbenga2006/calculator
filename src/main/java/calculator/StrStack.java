@@ -2,6 +2,7 @@ package calculator;
 
 /**
  * The StrStack class wraps around a Stack to specifically handle String values.
+ * @author Fawaz 
  */
 public class StrStack {
   private Stack stack;

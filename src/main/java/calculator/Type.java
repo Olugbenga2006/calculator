@@ -2,6 +2,7 @@ package calculator;
 
 /**
  * Class representing different types for the calculator.
+ * @author Fawaz 
  */
 public class Type {
   /**

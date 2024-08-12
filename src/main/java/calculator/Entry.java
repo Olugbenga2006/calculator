@@ -3,6 +3,7 @@ import java.util.Objects;
 /**
  * The Entry class represents an entry in a calculator that can be of various types:
  * a number, a symbol, or a string. It also provides methods to access and manipulate these entries.
+ * @author Fawaz 
  */
 public class Entry {
   private Type.Types type;

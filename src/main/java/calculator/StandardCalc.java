@@ -13,6 +13,7 @@ public class StandardCalc {
 
   /**
    * constructor that initialises the stacks and RPN object for calculations.
+   * @author Fawaz 
    */
   public StandardCalc() {
     values = new OpStack();
