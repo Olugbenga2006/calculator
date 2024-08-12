@@ -25,9 +25,11 @@ public class StandardCalc {
    * 
    * @param expr the string containing the calculation to be performed
    * @throws RuntimeException if stack is empty
+   * @throws BadTypeException if the stack is empty when an operation is done to it
+   * @throws InvalidExpression whenever the expression passed is invalid
    */
   public float evaluate(String expr)
-      throws RuntimeException {
+      throws RuntimeException, BadTypeException, InvalidExpression {
     Float num1;
     Float num2;
 

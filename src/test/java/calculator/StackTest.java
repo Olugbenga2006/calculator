@@ -1,6 +1,6 @@
 package calculator;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*; 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -22,10 +22,11 @@ class StackTest {
 
   /**
    * Test the push method and verify the top method's correctness.
+   * @throws EmptyStackException 
    */
   //Test1
   @Test
-  void testPushAndTop() {
+  void testPushAndTop() throws EmptyStackException {
     Entry entry = new Entry(42.0f);
     stack.push(entry);
     assertEquals(entry, stack.top());
@@ -65,10 +66,11 @@ class StackTest {
 
   /**
    * Test the isEmpty method for the Stack class.
+   * @throws EmptyStackException 
    */
   //Test4
   @Test
-  void testIsEmpty() {
+  void testIsEmpty() throws EmptyStackException {
     assertTrue(stack.isEmpty());
 
     Entry entry = new Entry("Test String");
@@ -104,10 +106,11 @@ class StackTest {
   }
   /**
    * Test ensures that multiple entries can be pushed and popped in the correct order.
+   * @throws EmptyStackException 
    */
   //Test7
   @Test
-  void testPushAndPopMultipleEntries() {
+  void testPushAndPopMultipleEntries() throws EmptyStackException {
       Entry entry1 = new Entry(1.0f);
       Entry entry2 = new Entry(2.0f);
       Entry entry3 = new Entry(3.0f);
@@ -123,10 +126,11 @@ class StackTest {
   }
   /**
    * Test ensures that different types of entries can be pushed onto the stack.
+   * @throws EmptyStackException 
    */
   //Test8
   @Test
-  void testPushDifferentTypes() {
+  void testPushDifferentTypes() throws EmptyStackException {
       Entry numberEntry = new Entry(1.0f);
       Entry stringEntry = new Entry("Test");
       Entry symbolEntry = new Entry(Symbol.PLUS);
@@ -141,10 +145,11 @@ class StackTest {
   }
   /**
    * Test ensures that the stack can handle a large number of entries.
+   * @throws EmptyStackException 
    */
   //Test9
   @Test
-  void testStackWithLargeNumberOfEntries() {
+  void testStackWithLargeNumberOfEntries() throws EmptyStackException {
       int largeNumber = 1000;
       for (int i = 0; i < largeNumber; i++) {
           stack.push(new Entry((float) i));

@@ -21,37 +21,45 @@ class StandardCalcTest {
 
   /**
    * Test evaluating a simple addition expression.
+   * @throws InvalidExpression 
+   * @throws BadTypeException 
    */
   //Test1
   @Test
-  void testEvaluateSimpleAddition() throws RuntimeException {
+  void testEvaluateSimpleAddition() throws RuntimeException, BadTypeException, InvalidExpression {
     assertEquals(7.0f, calculator.evaluate("3 + 4"), 0.001f);
   }
 
   /**
    * Test evaluating a simple subtraction expression.
+   * @throws InvalidExpression 
+   * @throws BadTypeException 
    */
   //Test2
   @Test
-  void testEvaluateSimpleSubtraction() throws RuntimeException {
+  void testEvaluateSimpleSubtraction() throws RuntimeException, BadTypeException, InvalidExpression {
     assertEquals(2.0f, calculator.evaluate("5 - 3"), 0.001f);
   }
 
   /**
    * Test evaluating a simple multiplication expression.
+   * @throws InvalidExpression 
+   * @throws BadTypeException 
    */
   //Test3
   @Test
-  void testEvaluateSimpleMultiplication() throws RuntimeException {
+  void testEvaluateSimpleMultiplication() throws RuntimeException, BadTypeException, InvalidExpression {
     assertEquals(15.0f, calculator.evaluate("3 * 5"), 0.001f);
   }
 
   /**
    * Test evaluating a simple division expression.
+   * @throws InvalidExpression 
+   * @throws BadTypeException 
    */
   //Test4
   @Test
-  void testEvaluateSimpleDivision() throws RuntimeException {
+  void testEvaluateSimpleDivision() throws RuntimeException, BadTypeException, InvalidExpression {
     assertEquals(2.0f, calculator.evaluate("10 / 5"), 0.001f);
   }
 }

@@ -1,6 +1,6 @@
 package calculator;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*; 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,20 +21,24 @@ class StrStackTest {
 
   /**
    * Test the push method and verify the top method's correctness.
+   * @throws BadTypeException 
+   * @throws RuntimeException 
    */
   //Test1
   @Test
-  void testPushAndTop() {
+  void testPushAndTop() throws RuntimeException, BadTypeException {
     strStack.push("Test String");
     assertEquals("Test String", strStack.top());
   }
 
   /**
    * Test the push method and verify the pop method's correctness.
+   * @throws BadTypeException 
+   * @throws RuntimeException 
    */
   //Test2
   @Test
-  void testPushAndPop() {
+  void testPushAndPop() throws RuntimeException, BadTypeException {
     strStack.push("Hello, World!");
     assertEquals("Hello, World!", strStack.pop());
     assertEquals(0, strStack.size());
@@ -42,10 +46,12 @@ class StrStackTest {
 
   /**
    * Test the size method for the StrStack class.
+   * @throws BadTypeException 
+   * @throws RuntimeException 
    */
   //Test3
   @Test
-  void testSize() {
+  void testSize() throws RuntimeException, BadTypeException {
     strStack.push("First");
     strStack.push("Second");
     assertEquals(2, strStack.size());
@@ -90,10 +96,12 @@ class StrStackTest {
 
   /**
    * Test pushing multiple Strings and then popping them to ensure LIFO behavior.
+   * @throws BadTypeException 
+   * @throws RuntimeException 
    */
   //Test7
   @Test
-  void testPushMultipleAndPop() {
+  void testPushMultipleAndPop() throws RuntimeException, BadTypeException {
     strStack.push("First");
     strStack.push("Second");
     strStack.push("Third");
@@ -105,10 +113,12 @@ class StrStackTest {
 
   /**
    * Test interleaved push and pop operations.
+   * @throws BadTypeException 
+   * @throws RuntimeException 
    */
   //Test8
   @Test
-  void testInterleavedPushAndPop() {
+  void testInterleavedPushAndPop() throws RuntimeException, BadTypeException {
     strStack.push("First");
     assertEquals("First", strStack.pop());
     
@@ -120,10 +130,12 @@ class StrStackTest {
 
   /**
    * Test the behavior after pushing multiple elements and ensuring the size is correct at each step.
+   * @throws BadTypeException 
+   * @throws RuntimeException 
    */
   //Test9
   @Test
-  void testPushMultipleAndCheckSize() {
+  void testPushMultipleAndCheckSize() throws RuntimeException, BadTypeException {
     strStack.push("First");
     assertEquals(1, strStack.size());
 
@@ -145,10 +157,12 @@ class StrStackTest {
 
   /**
    * Test the robustness of the stack by pushing and popping a large number of elements.
+   * @throws BadTypeException 
+   * @throws RuntimeException 
    */
   //Test10
   @Test
-  void testPushPopLargeNumberOfElements() {
+  void testPushPopLargeNumberOfElements() throws RuntimeException, BadTypeException {
     for (int i = 0; i < 1000; i++) {
       strStack.push("String " + i);
     }

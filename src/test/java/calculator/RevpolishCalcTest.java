@@ -22,37 +22,45 @@ class RevpolishCalcTest {
 
   /**
    * Test evaluating a simple addition expression.
+   * @throws InvalidExpression 
+   * @throws BadTypeException 
    */
   //Test2
   @Test
-  void testEvaluateAddition() throws RuntimeException {
+  void testEvaluateAddition() throws RuntimeException, BadTypeException, InvalidExpression {
     assertEquals(5.0f, calculator.evaluate("2 3 +"), 0.001f);
   }
 
   /**
    * Test evaluating a simple subtraction expression.
+   * @throws InvalidExpression 
+   * @throws BadTypeException 
    */
   //Test3
   @Test
-  void testEvaluateSubtraction() throws RuntimeException {
+  void testEvaluateSubtraction() throws RuntimeException, BadTypeException, InvalidExpression {
     assertEquals(1.0f, calculator.evaluate("4 3 -"), 0.001f);
   }
 
   /**
    * Test evaluating a simple multiplication expression.
+   * @throws InvalidExpression 
+   * @throws BadTypeException 
    */
   //Test4
   @Test
-  void testEvaluateMultiplication() throws RuntimeException {
+  void testEvaluateMultiplication() throws RuntimeException, BadTypeException, InvalidExpression {
     assertEquals(12.0f, calculator.evaluate("4 3 *"), 0.001f);
   }
 
   /**
    * Test evaluating a simple division expression.
+   * @throws InvalidExpression 
+   * @throws BadTypeException 
    */
   //Test5
   @Test
-  void testEvaluateDivision() throws RuntimeException {
+  void testEvaluateDivision() throws RuntimeException, BadTypeException, InvalidExpression {
     assertEquals(2.0f, calculator.evaluate("8 4 /"), 0.001f);
   }
 

@@ -21,20 +21,24 @@ class OpStackTest {
 
   /**
    * Test the push method and verify the top method's correctness.
+   * @throws BadTypeException 
+   * @throws RuntimeException 
    */
   //Test1
   @Test
-  void testPushAndTop() {
+  void testPushAndTop() throws RuntimeException, BadTypeException {
     opStack.push(Symbol.PLUS);
     assertEquals(Symbol.PLUS, opStack.top());
     }
 
   /**
    * Test the push method and verify the pop method's correctness.
+   * @throws BadTypeException 
+   * @throws RuntimeException 
    */
   //Test2
   @Test
-  void testPushAndPop() {
+  void testPushAndPop() throws RuntimeException, BadTypeException {
     opStack.push(Symbol.MINUS);
     assertEquals(Symbol.MINUS, opStack.pop());
     assertEquals(0, opStack.size());
@@ -42,10 +46,12 @@ class OpStackTest {
 
   /**
    * Test the size method for the OpStack class.
+   * @throws BadTypeException 
+   * @throws RuntimeException 
    */
   //Test3
   @Test
-  void testSize() {
+  void testSize() throws RuntimeException, BadTypeException {
     opStack.push(Symbol.TIME);
     opStack.push(Symbol.DIVIDE);
     assertEquals(2, opStack.size());
@@ -90,10 +96,12 @@ class OpStackTest {
 
   /**
    * Test pushing multiple Symbols and then popping them to ensure LIFO behavior.
+   * @throws BadTypeException 
+   * @throws RuntimeException 
    */
   //Test7
   @Test
-  void testPushMultipleAndPop() {
+  void testPushMultipleAndPop() throws RuntimeException, BadTypeException {
     opStack.push(Symbol.PLUS);
     opStack.push(Symbol.MINUS);
     opStack.push(Symbol.DIVIDE);
@@ -104,10 +112,12 @@ class OpStackTest {
 
   /**
    * Test interleaved push and pop operations.
+   * @throws BadTypeException 
+   * @throws RuntimeException 
    */
   //Test8
   @Test
-  void testInterleavedPushAndPop() {
+  void testInterleavedPushAndPop() throws RuntimeException, BadTypeException {
     opStack.push(Symbol.PLUS);
     assertEquals(Symbol.PLUS, opStack.pop());
     opStack.push(Symbol.MINUS);
@@ -118,10 +128,12 @@ class OpStackTest {
 
   /**
    * Test the behaviour after pushing multiple elements and ensuring the size is correct at each step.
+   * @throws BadTypeException 
+   * @throws RuntimeException 
    */
   //Test9
   @Test
-  void testPushMultipleAndCheckSize() {
+  void testPushMultipleAndCheckSize() throws RuntimeException, BadTypeException {
     opStack.push(Symbol.PLUS);
     assertEquals(1, opStack.size());
 
@@ -143,10 +155,12 @@ class OpStackTest {
 
   /**
    * Test the robustness of the stack by pushing and popping a large number of elements.
+   * @throws BadTypeException 
+   * @throws RuntimeException 
    */
   //Test10
   @Test
-  void testPushPopLargeNumberOfElements() {
+  void testPushPopLargeNumberOfElements() throws RuntimeException, BadTypeException {
     for (int i = 0; i < 1000; i++) {
         opStack.push(Symbol.PLUS);
         }

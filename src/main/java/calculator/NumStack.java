@@ -27,8 +27,9 @@ public class NumStack {
    *
    * @return The float value at the top of the stack.
    * @throws RuntimeException if the stack is empty.
+   * @throws BadTypeException if wrong data type is removed
    */
-  public float pop() throws RuntimeException {
+  public float pop() throws RuntimeException, BadTypeException {
     if (stack.isEmpty()) {
       throw new RuntimeException("Stack is empty");
     }
@@ -40,8 +41,9 @@ public class NumStack {
    *
    * @return The float value at the top of the stack.
    * @throws RuntimeException if the stack is empty.
+   * @throws BadTypeException if wrong data type is entered
    */
-  public float top() throws RuntimeException {
+  public float top() throws RuntimeException, BadTypeException {
     if (stack.isEmpty()) {
       throw new RuntimeException("Stack is empty");
     }

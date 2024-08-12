@@ -1,6 +1,6 @@
 package calculator;
 
-import java.util.Scanner;
+import java.util.Scanner; 
 import java.util.function.Consumer;
 
 /**

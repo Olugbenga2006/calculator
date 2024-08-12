@@ -21,9 +21,11 @@ public class RevPolishCalc {
    * 
    * @param expr the string containing the calculation to be performed
    * @throws RuntimeException if the stack is empty
+   * @throws BadTypeException if the stack is empty when an operation is done to it
+   * @throws InvalidExpression whenever the expression passed is invalid
    */
   public float evaluate(String expr)
-      throws RuntimeException {
+      throws RuntimeException, BadTypeException, InvalidExpression {
     Float num1;
     Float num2;
     Float result;
@@ -40,7 +42,7 @@ public class RevPolishCalc {
 
         } catch (IndexOutOfBoundsException esException) {
           scanner.close();
-          throw new RuntimeException("Invalid Expression");
+          throw new InvalidExpression("Invalid Expression") ;
         }
         switch (scanner.next()) {
           case "+":
@@ -59,7 +61,7 @@ public class RevPolishCalc {
             result = num1 / num2;
             return result;
           default:
-            throw new RuntimeException("Invalid Expression");
+            throw new InvalidExpression("Invalid Expression");
         }
       }
     }

@@ -1,7 +1,5 @@
 package calculator;
-
-import calculator.Symbol;
-
+import java.util.Objects;
 /**
  * The Entry class represents an entry in a calculator that can be of various types:
  * a number, a symbol, or a string. It also provides methods to access and manipulate these entries.
@@ -50,42 +48,30 @@ public class Entry {
    * Gets the string value of the Entry with exception handling.
    *
    * @return The string value of the Entry.
-   * @throws RuntimeException if the Entry is not of type STRING.
+   * @throws BadTypeException if the Entry is not of type STRING.
    */
-  public String getString() {
-    if (type == Type.Types.STRING) {
-      return stringValue;
-    } else {
-      throw new RuntimeException("bad type");
-    }
+  public String getString() throws BadTypeException {
+    return stringValue;
   }
 
   /**
    * Gets the symbol of the Entry with exception handling.
    *
    * @return The symbol of the Entry.
-   * @throws RuntimeException if the Entry is not of type SYMBOL.
+   * @throws BadTypeException if the Entry is not of type SYMBOL.
    */
-  public Symbol getSymbol() {
-    if (type == Type.Types.SYMBOL) {
-      return symbol;
-    } else {
-      throw new RuntimeException("bad type");
-    }
+  public Symbol getSymbol()  throws BadTypeException {
+    return symbol;
   }
 
   /**
    * Gets the float value of the Entry with exception handling.
    *
    * @return The float value of the Entry.
-   * @throws RuntimeException if the Entry is not of type NUMBER.
+   * @throws BadTypeException if the Entry is not of type NUMBER.
    */
-  public float getValue() {
-    if (type == Type.Types.NUMBER) {
-      return floatValue;
-    } else {
-      throw new RuntimeException("bad type");
-    }
+  public float getValue() throws BadTypeException {
+    return floatValue;
   }
 
   /**

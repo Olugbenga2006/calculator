@@ -21,20 +21,24 @@ class NumstackTest {
 
   /**
    * Test the push method and verify the top method's correctness.
+   * @throws EmptyStackException 
+   * @throws BadTypeException 
    */
   //Test1
   @Test
-  void testPushAndTop() {
+  void testPushAndTop() throws BadTypeException, EmptyStackException {
     numStack.push(42.0f);
     assertEquals(42.0f, numStack.top(), 0.001);
   }
 
   /**
    * Test the push method and verify the pop method's correctness.
+   * @throws EmptyStackException 
+   * @throws BadTypeException 
    */
   //Test2
   @Test
-  void testPushAndPop() {
+  void testPushAndPop() throws BadTypeException, EmptyStackException {
     numStack.push(3.14f);
     assertEquals(3.14f, numStack.pop(), 0.001);
     assertTrue(numStack.size() == 0);
@@ -42,10 +46,12 @@ class NumstackTest {
 
   /**
    * Test the size method for the NumStack class.
+   * @throws EmptyStackException 
+   * @throws BadTypeException 
    */
   //Test3
   @Test
-  void testSize() {
+  void testSize() throws BadTypeException, EmptyStackException {
     numStack.push(1.0f);
     numStack.push(2.0f);
     assertEquals(2, numStack.size());
