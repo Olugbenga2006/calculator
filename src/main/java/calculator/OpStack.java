@@ -2,6 +2,7 @@ package calculator;
 
 /**
  * The OpStack class wraps around a Stack to specifically handle Symbol values.
+ * @author Fawaz 
  */
 public class OpStack {
   private Stack stack;
@@ -26,9 +27,10 @@ public class OpStack {
    * Removes and returns the Symbol at the top of the stack.
    *
    * @return The Symbol at the top of the stack.
-   * @throws EmptyStackException if the stack is empty.
+   * @throws BadTypeException if the wrong data type is being removed
+   * @throws Runtime if the stack is empty.
    */
-  public Symbol pop() throws RuntimeException {
+  public Symbol pop() throws RuntimeException, BadTypeException {
     if (stack.isEmpty()) {
       throw new RuntimeException("Stack is empty");
     }
@@ -40,8 +42,9 @@ public class OpStack {
    *
    * @return The Symbol at the top of the stack.
    * @throws RuntimeException if the stack is empty.
+   * @throws BadTypeException if the wrong data type is entered
    */
-  public Symbol top() throws RuntimeException {
+  public Symbol top() throws RuntimeException, BadTypeException {
     if (stack.isEmpty()) {
       throw new RuntimeException("Stack is empty");
     }

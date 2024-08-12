@@ -2,6 +2,7 @@ package calculator;
 
 /**
  * The StrStack class wraps around a Stack to specifically handle String values.
+ * @author Fawaz 
  */
 public class StrStack {
   private Stack stack;
@@ -27,8 +28,9 @@ public class StrStack {
    *
    * @return The String at the top of the stack.
    * @throws RuntimeException if the stack is empty.
+   * @throws BadTypeException if wrong data type is popped
    */
-  public String pop() throws RuntimeException {
+  public String pop() throws RuntimeException, BadTypeException {
     if (stack.isEmpty()) {
       throw new RuntimeException("Stack is empty");
     }
@@ -39,9 +41,10 @@ public class StrStack {
    * Returns the String at the top of the stack without removing it.
    *
    * @return The String at the top of the stack.
+   * @throws BadTypeException if wrong data type is removed
    * @throws EmptyStackException if the stack is empty.
    */
-  public String top() throws RuntimeException {
+  public String top() throws RuntimeException, BadTypeException {
     if (stack.isEmpty()) {
       throw new RuntimeException("Stack is empty");
     }

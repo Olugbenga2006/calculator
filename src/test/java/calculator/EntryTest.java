@@ -11,11 +11,12 @@ class EntryTest {
 
   /**
    * Test the constructor for creating an Entry with a float value.
+   * @throws BadTypeException 
    */
   //Test 1
   // uses a constructor to pass test
   @Test
-  void testEntryFloat() {
+  void testEntryFloat() throws BadTypeException {
     Entry entry = new Entry(42.0f);
     assertEquals(Type.Types.NUMBER, entry.getType());
     assertEquals(42.0f, entry.getValue(), 0.001); // Use delta for float comparisons
@@ -23,11 +24,12 @@ class EntryTest {
 
   /**
    * Test the constructor for creating an Entry with a symbol.
+   * @throws BadTypeException 
    */
   //Test 2
   // uses a constructor to pass test
   @Test
-  void testEntrySymbols() {
+  void testEntrySymbols() throws BadTypeException {
     Entry entry = new Entry(Symbol.PLUS);
     assertEquals(Type.Types.SYMBOL, entry.getType());
     assertEquals(Symbol.PLUS, entry.getSymbol());
@@ -35,11 +37,12 @@ class EntryTest {
 
   /**
    * Test the constructor for creating an Entry with a string value.
+   * @throws BadTypeException 
    */
   //Test 3
   // uses a constructor to pass test
   @Test
-  void testEntryString() {
+  void testEntryString() throws BadTypeException {
     Entry entry = new Entry("Test String");
     assertEquals(Type.Types.STRING, entry.getType());
     assertEquals("Test String", entry.getString());
@@ -58,33 +61,36 @@ class EntryTest {
 
   /**
    * Test the getString method of the Entry class.
+   * @throws BadTypeException 
    */
   //Test 5
   // uses a getter function to pass test
   @Test
-  void testGetString() {
+  void testGetString() throws BadTypeException {
     Entry entry = new Entry("Test String");
     assertEquals("Test String", entry.getString());
   }
 
   /**
    * Test the getSymbol method of the Entry class.
+   * @throws BadTypeException 
    */
   //Test 6
   // uses a getter function to pass test
   @Test
-  void testGetSymbol() {
+  void testGetSymbol() throws BadTypeException {
     Entry entry = new Entry(Symbol.MINUS);
     assertEquals(Symbol.MINUS, entry.getSymbol());
   }
 
   /**
    * Test the getValue method of the Entry class.
+   * @throws BadTypeException 
    */
   //Test 7
   // uses a getter function to pass test
   @Test
-  void testGetValue() {
+  void testGetValue() throws BadTypeException {
     Entry entry = new Entry(3.14159f);
     assertEquals(3.14159f, entry.getValue(), 0.001);
   }
@@ -103,44 +109,45 @@ class EntryTest {
     assertEquals(entry1, entry2);
     assertNotEquals(entry1, entry3);
   }
+  
   /**
    * Test the getString method for an Entry not of type STRING.
    */
   //Test 9
   @Test
-  void testGetStringWithNonStringType() {
-    Entry entry = new Entry(42.0f); // Number type
-    RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
-      entry.getString();
-    });
-    assertEquals("bad type", thrown.getMessage());
-  }
+  public void testGetStringWithNonStringType() throws BadTypeException {
+    // Create an Entry with a float value (NUMBER type)
+    Entry entry = new Entry(3.14f);
 
+    // Try to get the string value, which should throw a BadTypeException
+    entry.getString();
+  }
+  
   /**
-   * Test the getSymbol method for an Entry not of type SYMBOL.
+   * Test the getSymbol method for an Entry not of type Symbol.
    */
   //Test 10
   @Test
-  void testGetSymbolWithNonSymbolType() {
-    Entry entry = new Entry("Test String"); // String type
-    RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
-      entry.getSymbol();
-    });
-    assertEquals("bad type", thrown.getMessage());
-  }
+  public void testGetSymbolWithNonSymbolType() throws BadTypeException {
+    // Create an Entry with a float value (NUMBER type)
+    Entry entry = new Entry(42.0f);
 
+    // Try to get the symbol, which should throw a BadTypeException
+    entry.getSymbol();
+  }
   /**
-   * Test the getValue method for an Entry not of type NUMBER.
+   * Test the getValue method for an Entry not of type float.
    */
   //Test 11
   @Test
-  void testGetValueWithNonNumberType() {
-    Entry entry = new Entry(Symbol.PLUS); // Symbol type
-    RuntimeException thrown = assertThrows(RuntimeException.class, () -> {
-      entry.getValue();
-    });
-    assertEquals("bad type", thrown.getMessage());
+  public void testGetValueWithNonNumberType() throws BadTypeException {
+    // Create an Entry with a string value (STRING type)
+    Entry entry = new Entry("Not a number");
+
+    // Try to get the float value, which should throw a BadTypeException
+    entry.getValue();
   }
+  
   /**
    * Test ensures that equals method returns false when comparing two types
    */

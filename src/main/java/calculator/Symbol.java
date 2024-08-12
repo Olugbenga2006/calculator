@@ -2,6 +2,7 @@ package calculator;
 
 /**
  * Enum representing symbols used in calculations.
+ * @author Fawaz 
  */
 public enum Symbol {
   LEFT_BRACKET("("),

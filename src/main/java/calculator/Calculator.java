@@ -15,7 +15,8 @@ public interface Calculator {
    * @param expression the arithmetic expression to evaluate
    * @param infix whether the expression is in infix format (`true`) or postfix format (`false`)
    * @return the result of the evaluation
-   * @throws RuntimeException if the expression is invalid or cannot be evaluated
+   * @throws InvalidExpression  if the expression is invalid or cannot be evaluated
+
    */
-  public float evaluate(String expression, Boolean infix) throws RuntimeException;
+  public float evaluate(String expression, Boolean infix) throws InvalidExpression;
 }
